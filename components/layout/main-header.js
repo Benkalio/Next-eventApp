@@ -5,15 +5,19 @@ function MainHeader() {
     return (
         <header className={classes.header}>
             <div className={classes.logo}>
-                <Link href='/'>NextEvents</Link>
+                <Link href='/'>Events</Link>
             </div>
             <nav className={classes.navigation}>
                 <ul>
                     <li>
-                        <Link href='/events'>Browse All Events</Link>
+                        <Link href='/events'>Check Out Events</Link>
                     </li>
                 </ul>
             </nav>
+            <form>
+                <label htmlFor="search" />
+                <input htmlFor='search' type='search' id="search" />
+            </form>
         </header>
     );
 }

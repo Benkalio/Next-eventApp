@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { useRouter } from 'next/router';
 
 import { getAllEvents } from "../../dummy-data";
-import EventSearch from '../../components/events/event-search'
+import EventsSearch from '../../components/events/events-search'
 import EventList from "../../components/events/event-list";
 
 function EventPage() {
@@ -17,7 +17,7 @@ function EventPage() {
 
     return (
         <Fragment>
-            <EventSearch onSearch={findEventsHandler} />
+            <EventsSearch onSearch={findEventsHandler} />
             <EventList items={events}/>
         </Fragment>
     );

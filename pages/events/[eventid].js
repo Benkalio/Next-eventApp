@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { getEventById } from '../../dummy-data';
 import EventSummary from '../../components/event-detail/event-summary';
@@ -8,7 +8,6 @@ import ErrorAlert from '../../components/ui/error-alert';
 
 function EventDetailPage() {
     const router = useRouter();
-    // const [backgroundColor] = useState('green');
 
     const eventId = router.query.eventId;
     const event = getEventById(eventId);

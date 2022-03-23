@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Button from "../ui/button";
 import classes from './events-search.module.css';
 
-function EventSearch(props) {
+function EventsSearch(props) {
     const yearInputRef = useRef();
     const monthInputRef = useRef();
 
@@ -49,4 +49,4 @@ function EventSearch(props) {
     )
 }
 
-export default EventSearch;
+export default EventsSearch;

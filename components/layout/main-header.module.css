@@ -5,7 +5,7 @@
     align-items: baseline;
     padding: 1rem 10%;
     height: 5rem;
-    background-color: #202020;
+    background-color: #160909;
   }
   
   .logo {
@@ -36,6 +36,10 @@
     }
   
     .navigation a {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .navigation a:hover {
+      color: rgb(172, 240, 240);
     }
   }

@@ -58,8 +58,8 @@ function FilteredEventsPage() {
         );
     }
 
-    // 1 IS DEDUCTED FROM THE DATE BELOW BECAUSE THE DATE CONSTRUCTOR
-    // EXPECTS THE DATE TO START IN A SERIAL FORM
+    // 1 IS DEDUCTED FROM THE MONTH BELOW BECAUSE THE DATE CONSTRUCTOR
+    // EXPECTS THE MONTH TO START IN A SERIAL FORM
     const date = new Date(numYear, numMonth - 1);
 
     return (

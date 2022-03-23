@@ -2,14 +2,14 @@ import { Fragment } from 'react';
 
 import { getFeaturedEvents } from '../dummy-data';
 import EventList from '../components/events/event-list';
-import EventSearch from '../../components/events/event-search';
+import EventsSearch from '../components/events/events-search';
 
 function RootPage() {
     const featuredEvents = getFeaturedEvents();
 
     return (
         <Fragment>
-            <EventSearch />
+            <EventsSearch />
             <EventList items={featuredEvents}/>
         </Fragment>
     );
