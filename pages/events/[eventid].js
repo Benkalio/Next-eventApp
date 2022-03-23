@@ -7,8 +7,8 @@ import EventContent from '../../components/event-detail/event-content';
 import ErrorAlert from '../../components/ui/error-alert';
 
 function EventDetailPage() {
-    const router = useRouter()
-    const [backgroundColor] = useState('green')
+    const router = useRouter();
+    // const [backgroundColor] = useState('green');
 
     const eventId = router.query.eventId;
     const event = getEventById(eventId);
