@@ -1,18 +1,26 @@
 import { Fragment } from 'react';
 
-import { getFeaturedEvents } from '../dummy-data';
+import { getFeaturedEvents } from '../helpers/api-utils';
 import EventList from '../components/events/event-list';
 import EventsSearch from '../components/events/events-search';
 
-function RootPage() {
-    const featuredEvents = getFeaturedEvents();
-
+function RootPage(props) {
     return (
         <Fragment>
             <EventsSearch />
-            <EventList items={featuredEvents}/>
+            <EventList items={props.events}/>
         </Fragment>
     );
+}
+
+// USING GETSTATICPROPS FOR STATIC GENERATION
+export async function getStaticProps() {
+    const featuredEvents = await getFeaturedEvents();
+    return {
+        props: {
+            events: featuredEvents 
+        }
+    }
 }
 
 export default RootPage;
