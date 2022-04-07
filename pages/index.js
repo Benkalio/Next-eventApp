@@ -4,10 +4,11 @@ import { Fragment } from 'react';
 import { getFeaturedEvents } from '../helper/api-util';
 import EventList from '../components/events/event-list';
 import EventsSearch from '../components/events/events-search';
+import NewsletterRegistration from '../components/input/newsletter-registration';
 
 function RootPage(props) {
     return (
-        <Fragment>
+        <div>
             <Head>
                 <title>NextJS Events</title>
                 <meta
@@ -16,8 +17,9 @@ function RootPage(props) {
                 />
             </Head>
             <EventsSearch />
+            <NewsletterRegistration />
             <EventList items={props.events}/>
-        </Fragment>
+        </div>
     );
 }
 
