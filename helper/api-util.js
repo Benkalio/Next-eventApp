@@ -3,8 +3,10 @@ export async function getAllEvents() {
     const response = await fetch('https://nextjs-clientsidedatafetch-default-rtdb.firebaseio.com/sales/events.json');
     const data = await response.json();
 
+    if (!response) {
+        return console.log(error);
+    }
     const events = []
-
     for (const key in data) {
         events.push({
             id: key,
