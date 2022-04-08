@@ -27,7 +27,6 @@ function FilteredEventsPage(props) {
                     ...data[key]
                 });
             }
-        
             setLoadedEvents(events);
         }
     }, [data]);
