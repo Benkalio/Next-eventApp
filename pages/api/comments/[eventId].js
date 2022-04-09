@@ -1,6 +1,9 @@
+import { MongoClient } from 'mongodb';
 
-function handler(req, res) {
+async function handler(req, res) {
     const eventId = req.query.eventId;
+
+    const client = await MongoClient.connect('mongodb+srv://tennyson:nextjscourse@cluster0.0ntge.mongodb.net/events?retryWrites=true&w=majority')
 
     if (req.method === "POST") {
         //ADD SERVER SIDE VALIDATION
@@ -16,33 +19,38 @@ function handler(req, res) {
         }
 
         const newComment = {
-            id: new Date().toISOString(),
+            // id: new Date().toISOString(),
             email,
             name,
-            text
+            text,
+            eventId
         };
 
-        console.log(newComment);
+        const db = client.db();
+        const result = await db.collection('comments').insertOne(newComment);
+
+        console.log(result);
+
+        newComment.id = result.insertedId;
+
         res.status(201).json({
             message: 'Added comment.',
             comment: newComment
         });
     }   
     if (req.method === "GET") {
-        const dummyList = [
-            {
-                id: 'c1',
-                name: 'Tenny',
-                text: 'Testing comments 1'
-            },
-            {
-                id: 'c2',
-                name: 'Pasc',
-                text: 'Testing comments 22'
-            },
-        ];
-        res.status(200).json({comments: dummyList})
+        const db = client.db();
+
+        const documents = await db
+            .collection('comments')
+            .find(filter)
+            .sort({ _id: -1 })
+            .toArray();
+        res.status(200).json({comments: documents})
     }
+
+    //CLOSE DATABASE CONNECTION ***
+    client.close();
 }
 
 export default handler;
