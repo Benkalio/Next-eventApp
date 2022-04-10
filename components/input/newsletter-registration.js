@@ -19,8 +19,6 @@ function NewsletterRegistration() {
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
-    
-    // send valid data to API
   }
 
   return (
