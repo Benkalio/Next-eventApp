@@ -13,6 +13,7 @@ function EventLogistics(props) {
     month: 'long',
     year: 'numeric',
   });
+
   const addressText = address.replace(', ', '\n');
 
   return (

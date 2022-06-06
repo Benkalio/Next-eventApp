@@ -15,7 +15,8 @@ function EventItem(props) {
         month: 'long',
         year: 'numeric'
     });
-    const formattedAddress = location.replace(', ', '\n');
+
+    // const formattedAddress = location.replace(', ', '\n');
     const exploreLink = `/events/${id}`;
 
     return (
@@ -30,7 +31,7 @@ function EventItem(props) {
                     </div>
                     <div className={classes.address}>
                         <AddressIcon />
-                        <address>{formattedAddress}</address>
+                        <address>{location}</address>
                     </div>
                 </div>
                 <div className={classes.actions}>
@@ -43,7 +44,7 @@ function EventItem(props) {
                 </div>
             </div>
         </li>
-    )
-}
+    );
+};
 
 export default EventItem;

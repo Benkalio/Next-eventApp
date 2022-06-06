@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { useRouter } from 'next/router';
 import Head from "next/head";
 
-import { getAllEvents } from "../../helper/api-util";
+import { getAllEvents } from '../../helpers/api-util';
 import EventsSearch from '../../components/events/events-search'
 import EventList from "../../components/events/event-list";
 
@@ -18,7 +18,7 @@ function EventPage(props) {
 
     return (
         <Fragment>
-             <Head>
+            <Head>
                 <title>All Events</title>
                 <meta
                     name='description'
